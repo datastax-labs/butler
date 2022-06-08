@@ -1,0 +1,40 @@
+plugins {
+    id 'java-library'
+    id 'java-test-fixtures'
+}
+
+configurations {
+    tests.extendsFrom testCompile
+}
+
+task testJar(type: Jar, dependsOn: testClasses) {
+    classifier "test"
+    from sourceSets.test.output
+}
+
+artifacts {
+    tests testJar
+}
+
+dependencies {
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    implementation 'com.squareup.moshi:moshi:1.9.2'
+    implementation 'org.freemarker:freemarker:2.3.31'
+
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.10.3'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.10.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.10.3'
+
+    implementation 'io.swagger.core.v3:swagger-annotations:2.1.2'
+
+    testImplementation 'org.mockito:mockito-core:3.10.0'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.0'
+
+    testFixturesImplementation 'org.mockito:mockito-core:3.10.0'
+    testFixturesImplementation 'com.google.guava:guava:28.2-jre'
+    testFixturesImplementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    testFixturesImplementation 'com.squareup.moshi:moshi:1.9.2'
+    testFixturesImplementation 'org.skyscreamer:jsonassert:1.5.0'
+    testFixturesImplementation 'org.freemarker:freemarker:2.3.31'
+
+}

@@ -1,0 +1,46 @@
+{
+  "workflow": "ci",
+  "branch": "main",
+  "build_number": 3,
+  "url": "http://ci.example.com/ci/main/3",
+  "start_time": 1651215900,
+  "duration_ms": 100013,
+  "tests": [
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testA",
+      "variant": "",
+      "failed": false,
+      "skipped": false,
+      "duration_ms": 1000,
+      "url": "http://ci.example.com/ci/main/3/com.example.Suite1/testA"
+    },
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testB",
+      "variant": "variant1",
+      "failed": false,
+      "skipped": false,
+      "duration_ms": 2000,
+      "url": "http://ci.example.com/ci/main/3/com.example.Suite1/testB-variant1"
+    },
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testB",
+      "variant": "variant2",
+      "failed": false,
+      "skipped": false,
+      "duration_ms": 3000,
+      "url": "http://ci.example.com/ci/main/3/com.example.Suite1/testB-variant2"
+    },
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testS",
+      "category": "PERF",
+      "failed": false,
+      "skipped": true,
+      "duration_ms": 20,
+      "url": "http://ci.example.com/ci/main/3/com.example.Suite1/testS"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.5.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE'
+    id 'org.hidetake.ssh' version '2.10.1'
+    id 'java'
+    id 'com.avast.gradle.docker-compose' version '0.16.4'
+}
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    integrationTestImplementation.extendsFrom testImplementation
+    integrationTestRuntimeOnly.extendsFrom runtimeOnly
+}
+
+sourceSets {
+    integrationTest {
+        compileClasspath += sourceSets.main.output
+        compileClasspath += sourceSets.test.output
+        runtimeClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.test.output
+    }
+}
+
+dependencies {
+    implementation project(':commons')
+    implementation project(':butler-api')
+    implementation project(':butler-webui')
+
+    // we need to add implementation for the company-specific projects
+    // so that their implementations of the ButlerProject are available
+    implementation project(':butler-apache')
+
+    // Kind of confused why this is needed since this should come transitively with commons (and
+    // we don't use it directly in the server doc), but I get a compilation failure without it.
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    implementation 'org.freemarker:freemarker:2.3.31'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+    testImplementation('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    testImplementation 'org.awaitility:awaitility:4.0.3'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    implementation 'org.agrona:agrona:1.4.0'
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.3.0'
+
+    implementation 'org.simpleflatmapper:sfm-springjdbc:8.2.1'
+
+    implementation 'io.jsonwebtoken:jjwt-api:0.11.1'
+    implementation 'io.jsonwebtoken:jjwt-impl:0.11.1'
+    implementation 'io.jsonwebtoken:jjwt-jackson:0.11.1'
+
+    testImplementation(testFixtures(project(":commons")))
+
+    integrationTestImplementation 'io.rest-assured:rest-assured:4.2.0'
+    integrationTestImplementation 'io.rest-assured:json-path:4.2.0'
+    integrationTestImplementation 'io.rest-assured:xml-path:4.2.0'
+}
+
+bootRun {
+    jvmArgs += "-Dspring.profiles.active=dev"
+}
+
+def currentName(ext) {
+    def archiveVersion = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
+    def archiveClassifier = "git rev-parse --short HEAD".execute().text.trim()
+    return "butler-${project.version}-${archiveVersion}@${archiveClassifier}.${ext}"
+}
+
+bootJar {
+    archiveFileName = currentName('jar')
+    launchScript {
+        properties 'inlinedConfScript': file("src/main/resources/initscript.sh")
+    }
+}
+
+
+task dockerBuild(type: Exec) {
+    dependsOn build
+    workingDir project.rootDir
+
+    commandLine "docker", "build",
+        ".", "-t", "datastax/butler-server:latest",
+        "-f", "./butler-server/docker/Dockerfile"
+}
+
+task startContainers(type: Exec) {
+    commandLine 'bash', '-c', """
+        jenkins_image="mattjfleming/jenkins-dse:latest"
+        docker pull \${jenkins_image}
+        jenkins_container_id=\$(docker run -d --rm -p 8081:8080 -p 50000:50000 -p 443:8080 -e JAVA_OPTS='-Djenkins.install.runSetupWizard=false' \${jenkins_image})
+        jenkins_ip=\$(docker inspect -f {{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}} \${jenkins_container_id})
+
+        # Wait for jenkins to be ready
+        until \$(docker logs \${jenkins_container_id} 2>&1 | grep -q 'up and running'); do
+            # Quit if jenkins dies
+            if [ "\$(docker ps --no-trunc | grep \${jenkins_container_id})" == "" ]; then
+                echo "Jenkins container died unexpectedly" >&1
+                exit 1
+            fi
+            sleep 1
+        done
+
+        # This will go away eventually once the jenkins-butler image is updated.
+        docker exec \${jenkins_container_id} /bin/bash -c 'apt-get update && apt-get install -y wget' > /dev/null 2>&1
+
+        butler_cfg_dir=\$(pwd)/config/testing
+
+        butler_container_id=\$(docker run -d --rm -p 8080:8080/tcp \
+            -v \${butler_cfg_dir}:/config \
+            --add-host jenkins-dse.build.dsinternal.org:\${jenkins_ip} \
+            -e spring_profiles_active=testing \
+            datastax/butler-server:latest)
+
+        # Wait for butler to be ready
+        until \$(docker logs \${butler_container_id} 2>&1 | grep -q 'Started ButlerApplication'); do
+            # Quit if butler dies
+            if [ "\$(docker ps --no-trunc | grep \${butler_container_id})" == "" ]; then
+                echo "Butler container died unexpectedly" >&1
+                exit 1
+            fi
+            sleep 1
+        done
+    """
+}
+
+task stopContainers(type: Exec) {
+    commandLine 'bash', '-e', '-c', """
+        stop_container() {
+            image=\$1
+            docker stop \$(docker ps | grep \$image | awk '{print \$1}') 2>&1 > /dev/null
+        }
+
+        stop_container "datastax/butler-server:latest"
+        stop_container "mattjfleming/jenkins-dse:latest"
+    """
+}
+
+task integrationTest(type: Test, description: 'Runs integration tests.', group: LifecycleBasePlugin.VERIFICATION_GROUP) {
+    useJUnitPlatform()
+    testClassesDirs = sourceSets.integrationTest.output.classesDirs
+    classpath = sourceSets.integrationTest.runtimeClasspath
+    shouldRunAfter test
+
+    finalizedBy composeLogs
+}
+
+check.dependsOn integrationTest
+
+dockerCompose.isRequiredBy integrationTest
+
+dockerCompose {
+    useComposeFiles = ['docker-compose.yaml']
+    composeLogToFile = project.file('build/docker/docker-logs.txt')
+    containerLogToDir = project.file('build/docker/container-logs')
+}
+
+

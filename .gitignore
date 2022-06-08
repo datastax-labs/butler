@@ -1,0 +1,42 @@
+# Gradle
+.gradle
+build
+gradle.properties
+
+# Spring boot
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# Vue and npm
+.DS_Store
+node_modules
+butler-webui/dist
+butler-webui/build_butler-ui
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+butler.log
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Ctags
+.tags
+

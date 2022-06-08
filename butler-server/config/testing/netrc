@@ -1,0 +1,6 @@
+ machine jenkins.example.com
+   login admin
+   password abracadabra
+machine jira.example.com
+   login foo
+   password bar

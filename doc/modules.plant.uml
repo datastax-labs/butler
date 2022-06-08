@@ -1,0 +1,29 @@
+@startuml
+[butler-server]
+[commons]
+[butler-api]
+[butler-webui]
+[butler-xyz] #palegreen
+
+database "mysql"
+
+interface "REST Api" as API
+
+[butler-xyz] ..> [commons] : compileOnly
+
+[butler-api] ..> [commons] : compileOnly
+
+[butler-server] --> [commons] : implementation
+
+[butler-server] --> [butler-xyz] : implementation
+
+[butler-server] ..> mysql: use
+
+[butler-server] - API
+
+[butler-webui] ..> API : use
+
+[butler-server] --> [butler-api]
+
+[butler-server] --> [butler-webui]
+@enduml
