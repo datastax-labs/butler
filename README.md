@@ -4,7 +4,7 @@
 
 Inspiration for butler was to cope with flickering tests in [Datastax Enterprise](https://www.datastax.com/products/datastax-enterprise) development as well as in [Apache Cassandra](https://cassandra.apache.org).
 
-TODO: thanks to Sylvain an Jon.
+Thanks @pcmanus for starting the project and building the foundation.
 
 ## Elevator pitch
 
