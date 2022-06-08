@@ -1,0 +1,92 @@
+plugins {
+    id "com.diffplug.gradle.spotless" version "3.27.1" apply false
+    id "net.ltgt.errorprone" version "2.0.2" apply false
+    id "io.freefair.lombok" version "5.3.3.3" apply false
+    id "jacoco"
+}
+
+subprojects {
+    version = '0.1'
+
+    apply plugin: 'jacoco'
+    apply plugin: 'com.diffplug.gradle.spotless'
+    apply plugin: 'net.ltgt.errorprone'
+    apply plugin: 'checkstyle'
+    apply plugin: 'io.freefair.lombok'
+    generateLombokConfig.enabled = false
+
+    tasks.withType(JavaCompile).configureEach {
+        options.errorprone.disableWarningsInGeneratedCode = true
+    }
+
+    plugins.withType(JavaPlugin) {
+        sourceCompatibility = 11
+        targetCompatibility = 11
+
+        checkstyleMain.mustRunAfter spotlessCheck
+        checkstyleTest.mustRunAfter spotlessCheck
+
+        dependencies {
+            compileOnly 'com.google.code.findbugs:jsr305:3.0.2'
+
+            implementation 'org.apache.logging.log4j:log4j-api:2.15.0'
+            implementation 'org.apache.logging.log4j:log4j-core:2.15.0'
+            implementation 'org.apache.logging.log4j:log4j-slf4j18-impl:2.15.0'
+            implementation 'org.apache.commons:commons-lang3:3.11'
+            implementation 'org.apache.commons:commons-text:1.9'
+
+            implementation 'com.google.guava:guava:28.2-jre'
+
+            testImplementation(platform('org.junit:junit-bom:5.8.2'))
+            testImplementation('org.junit.jupiter:junit-jupiter')
+
+            errorprone("com.google.errorprone:error_prone_core:2.10.0")
+        }
+
+        test {
+            // Use junit platform for unit tests
+            useJUnitPlatform()
+            testLogging {
+                events 'PASSED', 'FAILED', 'SKIPPED'
+                exceptionFormat "full"
+            }
+        }
+
+        spotless {
+            java {
+                googleJavaFormat()
+                licenseHeaderFile "$rootDir/license-header.java"
+                removeUnusedImports()
+            }
+        }
+
+        checkstyle {
+            maxWarnings = 0
+        }
+
+        jacocoTestReport {
+            dependsOn check
+            reports {
+                xml.enabled true
+                //xml.destination file("${rootProject.projectDir}/build/reports/jacoco/report.xml")
+                html.enabled true
+                csv.enabled false
+            }
+            getExecutionData().setFrom(fileTree(buildDir).include("/jacoco/*.exec"))
+        }
+
+        tasks.withType(JavaCompile) {
+            options.compilerArgs << "-Xlint:unchecked"
+
+            options.errorprone.disable(
+                    // With CompletableFuture, this check flags relatively legitimate case when
+                    // something like `whenCompleted` is used for instance.
+                    "FutureReturnValueIgnored",
+                    // We'd love that check, but it breaks with the @Builder lombok annotation at
+                    // the moment (See https://github.com/google/error-prone/issues/1244).
+                    "FallThrough",
+                    // https://github.com/google/error-prone/issues/2273
+                    "SameNameButDifferent")
+        }
+    }
+}

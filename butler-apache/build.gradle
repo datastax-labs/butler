@@ -1,0 +1,30 @@
+plugins {
+    id 'java-library'
+}
+
+configurations {
+    tests.extendsFrom testCompile
+}
+
+task testJar(type: Jar, dependsOn: testClasses) {
+    classifier "test"
+    from sourceSets.test.output
+}
+
+artifacts {
+    tests testJar
+}
+
+dependencies {
+    compileOnly project(':commons')
+
+    compileOnly 'org.springframework:spring-context:5.3.20'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    implementation 'com.squareup.moshi:moshi:1.9.2'
+    implementation 'org.freemarker:freemarker:2.3.31'
+
+    testImplementation 'org.mockito:mockito-core:3.10.0'
+    testImplementation 'org.skyscreamer:jsonassert:1.5.0'
+    testImplementation(testFixtures(project(":commons")))
+}

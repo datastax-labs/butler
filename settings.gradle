@@ -1,0 +1,15 @@
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'butler'
+
+include 'commons'
+include 'butler-api'
+include 'butler-webui'
+include 'butler-server'
+
+// custom projects code
+include 'butler-apache'

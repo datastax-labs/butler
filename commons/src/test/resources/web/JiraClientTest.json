@@ -1,0 +1,69 @@
+{
+    "*/issue/PRJ-42": {
+        "expand":"renderedFields,names,schema,operations,editmeta,changelog,versionedRepresentations",
+        "id":"55394",
+        "self":"https://jira.example.com/rest/api/3/issue/55394",
+        "key":"PRJ-42",
+        "fields": {
+            "summary":"Do something super awesome",
+            "reporter": {
+                "self":"https://jira.example.com/rest/api/3/user?accountId=123456789",
+                "accountId":"123456789",
+                "emailAddress":"john.doe@example.com",
+                "displayName":"John Doe",
+                "active":true,
+                "timeZone":"US/Central",
+                "accountType":"atlassian"
+            },
+            "fixVersions": [{
+                "self":"https://jira.example.com/rest/api/3/version/26801",
+                "id":"26801",
+                "description":"",
+                "name":"6.0.0",
+                "archived":false,
+                "released":true,
+                "releaseDate":"2018-06-05"
+            }],
+            "assignee": {
+                "self":"https://jira.example.com/rest/api/3/user?accountId=123456789",
+                "accountId":"123456789",
+                "emailAddress":"john.doe@example.com",
+                "displayName":"John Doe",
+                "active":true,
+                "timeZone":"US/Central",
+                "accountType":"atlassian"
+            },
+            "customfield_10033": {
+                "self":"https://jira.example.com/rest/api/3/user?accountId=123456789",
+                "accountId":"123456789",
+                "emailAddress":"john.wick@example.com",
+                "displayName":"John Wick",
+                "active":true,
+                "timeZone":"US/Central",
+                "accountType":"atlassian"
+            },
+            "customfield_10034":null,
+            "resolution": {
+                "self":"https://jira.example.com/rest/api/3/resolution/7",
+                "id":"7",
+                "description":"The issue has been completely solved.",
+                "name":"Done"
+            },
+            "status": {
+                "self":"https://jira.example.com/rest/api/3/status/6",
+                "description":"The issue is considered finished, the resolution is correct. Issues which are closed can be reopened.",
+                "iconUrl":"https://jira.example.com/images/icons/statuses/closed.png",
+                "name":"Closed",
+                "id":"6",
+                "statusCategory": {
+                    "self":"https://jira.example.com/rest/api/3/statuscategory/3",
+                    "id":3,
+                    "key":"done",
+                    "colorName":"green",
+                    "name":"Done"
+                }
+            }
+        }
+    },
+    "*/issue/PRJ-43": 404
+}

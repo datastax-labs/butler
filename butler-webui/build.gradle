@@ -1,0 +1,58 @@
+plugins {
+    id "com.github.node-gradle.node" version "2.2.3"
+}
+
+node {
+    download = project.hasProperty("downloadNode")
+    version = "14.1.0"
+}
+
+configurations {
+    npmResources
+}
+configurations.default.extendsFrom(configurations.npmResources)
+
+// Ensure the 'npm_run_build' tasks don't recompile for no reason
+npm_run_build {
+    inputs.files fileTree("public")
+    inputs.files fileTree("src")
+    inputs.file 'package.json'
+    inputs.file 'package-lock.json'
+    outputs.dir 'dist'
+}
+
+task checkWebUi(type: NpxTask) {
+  command = 'vue-cli-service'
+  args = ['lint', '--no-fix']
+}
+check.dependsOn checkWebUi
+
+task fixWebUi(type: NpxTask) {
+  command = 'vue-cli-service'
+  args = ['lint']
+}
+
+task packageButlerWebui(type: Zip) {
+    dependsOn npm_run_build
+    archiveBaseName = 'butler-webui'
+    archiveExtension = 'jar'
+    destinationDirectory = file("${projectDir}/build")
+    from('dist') {
+        // optional path under which output will be visible in Java classpath, e.g. static resources path
+        into 'static'
+    }
+}
+
+artifacts {
+    npmResources(packageButlerWebui.archiveFile) {
+        builtBy packageButlerWebui
+        type "jar"
+    }
+}
+
+assemble.dependsOn packageButlerWebui
+
+
+clean {
+    delete packageButlerWebui.archiveFile
+}

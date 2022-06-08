@@ -1,0 +1,55 @@
+{
+  "workflow": "ci",
+  "branch": "main",
+  "build_number": 1,
+  "url": "http://ci.example.com/ci/main/1",
+  "start_time": 1651215600,
+  "duration_ms": 100013,
+  "tests": [
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testA",
+      "variant": "",
+      "category": "UNIT",
+      "failed": false,
+      "skipped": false,
+      "duration_ms": 1000,
+      "url": "http://ci.example.com/ci/main/1/com.example.Suite1/testA"
+    },
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testB",
+      "variant": "variant1",
+      "category": "LONG",
+      "failed": false,
+      "skipped": false,
+      "duration_ms": 2000,
+      "url": "http://ci.example.com/ci/main/1/com.example.Suite1/testB-variant1"
+    },
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testB",
+      "variant": "variant2",
+      "category": "LONG",
+      "failed": true,
+      "skipped": false,
+      "duration_ms": 3000,
+      "url": "http://ci.example.com/ci/main/1/com.example.Suite1/testB-variant2",
+      "output": {
+        "error_details": "NullPointerException",
+        "error_stack_trace": "some stack trace",
+        "stdout": "running",
+        "stderr": "ERROR: NullPointerException"
+      }
+    },
+    {
+      "test_suite": "com.example.Suite1",
+      "test_case": "testS",
+      "category": "PERF",
+      "failed": false,
+      "skipped": true,
+      "duration_ms": 20,
+      "url": "http://ci.example.com/ci/main/1/com.example.Suite1/testS"
+    }
+  ]
+}

@@ -1,0 +1,1009 @@
+{
+  "_class": "hudson.model.Hudson",
+  "jobs": [
+    {
+      "_class": "com.tikal.jenkins.plugins.multijob.MultiJobProject",
+      "name": "1.1-dev-fast-ci-daily"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject",
+      "name": "adrestia"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "example-project-2.1-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.1-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "example-project-2.2-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-2.2-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.0"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "example-project-3.0-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.0-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.0-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.0-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.0-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.0-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "example-project-3.11-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "example-project-3.11-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "apache-trunk-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-in-jvm-dtests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "apache-trunk-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable-2.1-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-stable1.0-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.0-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-stable1.1-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable1.1-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-stable2.0-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-stable2.0-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-main-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-python3-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-main-upgrade-dtest"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+      "name": "Build_Docker_Images"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject",
+      "name": "compile-command-annotations"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+      "name": "daily-fast-ci-builds"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "Docker_Images_Publish"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-1.0-dev-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-flaky-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-flaky-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-flaky-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-flaky-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-flaky-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-flaky-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.0-dev-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-1.1-dev-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-flaky-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-1.1-dev-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-2.0-dev-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-flaky-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.0-dev-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-2.1-dev-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-flaky-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.1-dev-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-2.2-dev-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-2.2-dev-cqlsh-tests-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-flaky-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-flaky-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-flaky-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-flaky-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-flaky-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-flaky-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-large-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-novnode-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-offheap-buffers-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-offheap-objects-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-testall-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-2.2-dev-upgrade-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-master-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "mydb-master-cqlsh-tests-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-flaky-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-large-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-novnode-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-novnode-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-offheap-buffers-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-offheap-buffers-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-offheap-objects-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-offheap-objects-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-testall-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-thrift-tests-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-upgrade-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-master-upgrade-dtest-jdk11"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-pr-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "mydb-pr-upgrade-dtests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "dsl_seed"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "template-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "template-cqlsh-tests-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-artifacts"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "template-mydb-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "template-mydb-cqlsh-tests-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-dtest-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-dtest-upgrade"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-dtest-upgrade-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-large-dtest-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-root-artifacts"
+    },
+    {
+      "_class": "hudson.matrix.MatrixProject",
+      "name": "template-mydb-root-cqlsh-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-root-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-root-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-testall-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-mydb-thrift-tests-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-dtest-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-dtest-upgrade"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-dtest-upgrade-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-large-dtest"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-large-dtest-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-root-mgmtapi-test"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-testall-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-thrift-tests"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "template-thrift-tests-child"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test-new-dsl"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test-param-testall"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test-pr-checks"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+      "name": "test-result-compare"
+    },
+    {
+      "_class": "org.jenkinsci.plugins.workflow.job.WorkflowJob",
+      "name": "test-result-diff"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test-trunk"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test_dtest_build_script"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test_upgrade_bucketing"
+    },
+    {
+      "_class": "hudson.model.FreeStyleProject",
+      "name": "test_utest_build_script"
+    }
+  ]
+}

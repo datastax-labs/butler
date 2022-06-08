@@ -1,0 +1,14 @@
+version: '3.1'
+
+services:
+  db:
+    container_name: mariadb_container
+    image: mariadb:10.4
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: example
+      MARIADB_DATABASE: butler_db
+    ports:
+      - 3308:3306
+    volumes:
+      - ./src/main/resources/db:/docker-entrypoint-initdb.d/:ro
