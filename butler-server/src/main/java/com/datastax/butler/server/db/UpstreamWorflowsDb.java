@@ -13,7 +13,6 @@ import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
-import lombok.Value;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -95,11 +94,5 @@ public class UpstreamWorflowsDb extends DbTableService {
   private Collection<String> toString(Set<WorkflowId> ids) {
     return StringSanitizer.sanitize(
         ids.stream().map(WorkflowId::toString).collect(Collectors.toList()));
-  }
-
-  @Value
-  private static class StoredWorkflowBranch {
-    String workflow;
-    String branch;
   }
 }
