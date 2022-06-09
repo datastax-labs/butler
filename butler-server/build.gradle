@@ -4,6 +4,7 @@ plugins {
     id 'org.hidetake.ssh' version '2.10.1'
     id 'java'
     id 'com.avast.gradle.docker-compose' version '0.16.4'
+    id 'com.adarshr.test-logger'
 }
 
 configurations {

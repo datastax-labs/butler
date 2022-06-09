@@ -3,6 +3,7 @@ plugins {
     id "net.ltgt.errorprone" version "2.0.2" apply false
     id "io.freefair.lombok" version "5.3.3.3" apply false
     id "jacoco"
+    id 'com.adarshr.test-logger' version '2.1.1'
 }
 
 subprojects {
