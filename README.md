@@ -22,8 +22,8 @@ they can be picked up and fixed.
 Butler is usefull mostly if:
 1. product is mature and there are several branches (released versions) maintained
 2. product is complex and there are different groups of tests performed in different CI systems
-3. there is a tool to unify the view
-4. despite flickering tests team want to have some PR merge gating based on CI test results
+3. there is a need for holistic view on all tests / all branches
+4. despite having flickering tests team want to have some PR merge gating based on CI test results
 
 ## When butler is not really helpful?
 
