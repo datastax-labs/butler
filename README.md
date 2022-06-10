@@ -17,6 +17,19 @@ judge if their commits or PR bring new test regression
 or which tests are failing or flickering so that  
 they can be picked up and fixed.
 
+## When to use butler?
+
+Butler is usefull mostly if:
+1. product is mature and there are several branches (released versions) maintained
+2. product is complex and there are different groups of tests performed in different CI systems
+3. there is a tool to unify the view
+4. despite flickering tests team want to have some PR merge gating based on CI test results
+
+## When butler is not really helpful?
+
+1. If the team does not care about the tests condition
+2. If there are no test failures in the CI because zero-bug-tolerance policy is really working.
+
 ## Major features
 
 1. Importing test results from jenkins
@@ -28,18 +41,15 @@ they can be picked up and fixed.
 
 Some screens from [butler apache cassandra](https://butler.cassandra.apache.org/):
 
-
 ![ui-trends](doc/butler-cassandra-trends.png)
 
-
 ![ui-details](doc/butler-cassandra-details.png)
-
 
 ## Use without customization
 
 Without additional customization `butler` allows to use one workflow (`ci`) with one upstream branch (`main`) and data imported via rest api.
 
-See [basic usage guidelines](doc/BASIC-USAGE.md)] for detailed instruction how to do it.
+See [basic usage guidelines](START.md)] for detailed instruction how to do it.
 
 ## Customization
 
@@ -55,30 +65,16 @@ to customize `butler` so that it understands:
 - what should be the content of the reported ticket
 
 Customization is done by code as it is sometimes quite complex.
-See [customization guidelines](CUSTOMIZATION.md) for details.
+See [CassandraProject](butler-apache/src/main/java/com/datastax/butler/projects/apache/cassandra/Cassandra.java) as an example.
 
-Understanding [butler entities and relations](doc/DESIGN.md) between them can be be helpful to customize data import from jenkins or other systems.
-
-## When to use butler?
-
-Butler is usefull mostly if:
-1. product is mature and there are several branches (released versions) maintained
-2. product is complex and there are different groups of tests performed in different CI systems
-3. there is a tool to unify the view
-4. despite flickering tests team want to have some PR merge gating based on CI test results
-
-
-## When butler is not really helpful?
-
-1. If the team does not care about the tests condition
-2. If there are no test failures in the CI because zero-bug-tolerance policy is really working.
+Understanding [butler entities and relations](DESIGN.md) between them can be be helpful to customize data import from jenkins or other systems.
 
 ## Supported CI systems
 
 Butler supports importing data from any [jenkins](https://www.jenkins.io/) instance, being it a multibranch or standard pipeline.
 
 Importing data from any other source can be done by implementing
-dedicated importer using dediated [raw import rest api](doc/RAW-IMPORT-API.md).
+dedicated importer using dediated [raw import rest api](START.md#import-test-results).
 
 ## Supported Issue tracking systems
 
@@ -98,7 +94,7 @@ To run the Butler service, see the [`butler-server` module README](butler-server
 
 ## License
 
-Copyright 2021 DataStax Inc
+Copyright 2020-2022 DataStax Inc
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
