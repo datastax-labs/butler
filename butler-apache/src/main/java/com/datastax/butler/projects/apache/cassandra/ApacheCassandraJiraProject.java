@@ -29,4 +29,8 @@ public class ApacheCassandraJiraProject extends JiraProject {
   public String issueTemplateName() {
     return "cassandra-issue.ftl";
   }
+
+  boolean isResolutionClosed(String resolution) {
+      return Set.of("Fixed", "Done", "Not A Problem").contains(resolution);
+  }
 }
