@@ -47,6 +47,7 @@ public class Cassandra implements ButlerProject {
         cassandraBuildWorkflow("Cassandra-3.0", "cassandra-3.0"),
         cassandraBuildWorkflow("Cassandra-3.11", "cassandra-3.11"),
         cassandraBuildWorkflow("Cassandra-4.0", "cassandra-4.0"),
+        cassandraBuildWorkflow("Cassandra-4.1", "cassandra-4.1"),
         cassandraBuildWorkflow("Cassandra-trunk", "trunk"));
   }
 
